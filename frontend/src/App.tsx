@@ -1,12 +1,18 @@
-import NotificationButton from "./componentes/NotificationButton"
 
+import Header from "./componentes/header"
+import SalesCard from "./componentes/SalesCard"
 
 function App() {
   return(
     <>
-      <h1>Olá Mundo</h1>
-      <NotificationButton/>
-      <NotificationButton/>
+      <Header/>
+      <main>
+        <section id="sales">
+          <div className="dsmeta-container">
+            <SalesCard />
+          </div>
+        </section>
+      </main>
     </> // para puxar mais de uma tag tem q abrir <> </> e colocar o código no meio 
   )
 }
