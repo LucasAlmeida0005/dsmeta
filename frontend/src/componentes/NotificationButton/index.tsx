@@ -1,11 +1,23 @@
 import icon from '../../assets/img/notification-icon.svg'
+import axios from 'axios'
+import { BASE_URL } from '../../utils/request';
 // temos q importar a imagem pq normalmente não vai
 import './styles.css'
-function NotificationButton() {
+type Props = {
+  saleId : number;
+}
+
+function handleClick(id: number){
+   axios(`${BASE_URL}/sales/${id}/notification`)
+      .then(response => {
+        console.log("Sucesso");
+      });
+}
+function NotificationButton({saleId} : Props) {
   return(
     <>
-      <div className="dsmeta-red-btn">
-          <img src={icon} alt="Notifica" />
+      <div className="dsmeta-red-btn" onClick={() => handleClick(saleId)}>
+          <img src={icon} alt="Notifica"/>
       </div>
     </>
   )
